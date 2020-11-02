@@ -42,7 +42,7 @@ a,a span{
 	margin: 0px 10px;
 	color: #000;
 	font-family: 'rori';
-	font-size: 12px;
+	font-size: 16px;
 }
 #name{
 	font-size: 30px;
@@ -94,7 +94,7 @@ footer{
 	font-size: 12px;
 }
 footer td{
-	font-size: 12px;
+	font-size: 16px;
 }
 #by{
 	margin: 0px 30px;
