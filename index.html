@@ -47,6 +47,8 @@ $(function(){
 			lang = $("#lang").val();
 			$("#body").html("")
 			if(lang == "jp"){
+				$("#name").html("野々宮のののボタン")
+				$("#yxs").html("野々宮のののゲーム社")
 				$("#ctrl").html("コントロール")
 				$("#re span").html("止まるんじゃねぇぞ")
 				$("#stop").html("停止")
@@ -68,6 +70,8 @@ $(function(){
 					w.play();
 				})
 			}else if(lang == "sc"){
+				$("#name").html("野野宫ののの按钮")
+				$("#yxs").html("野野宫ののの游戏社")
 				$("#ctrl").html("控制")
 				$("#re span").html("不要停下来")
 				$("#stop").html("暂停")
@@ -118,9 +122,10 @@ $(function(){
 					<a href="https://twitter.com/nonomiyanonono" target="blank"><img class="link" src="image/twitter.png"></a>
 				</td>
 				<td width="34%" align="center">
-					<span id="name">野々宮ののの</span>
+					<span id="name">野野宫ののの按钮</span>
 				</td>
 				<td width="33%" align="right">
+					language：
 					<select id="lang">
 						<option value="sc">简体中文</option>
 						<option value="jp">日本語</option>
@@ -139,7 +144,7 @@ $(function(){
 		<table>
 			<tr>
 				<td valign="middle">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by<a href="https://space.bilibili.com/582466811" target="blank">野々宮ののの游戏社<img id="img" class="link" src="image/youxishe.jpg"></a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by<a href="https://space.bilibili.com/582466811" target="blank"><span id="yxs">野野宫ののの游戏社</span><img id="img" class="link" src="image/youxishe.jpg"></a>
 				</td>
 			</tr>
 		</table>	
