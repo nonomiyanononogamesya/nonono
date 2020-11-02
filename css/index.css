@@ -49,24 +49,12 @@
 		#ctrl{
 			background-color: #E3D8E9;
 		}
-		.ctrl{
-			height: 25px;
-			margin: 5px;
-			padding: 5px;
-			display: inline;
-			background-color: #AC80E8;
-			cursor: pointer;
-			border-width: 2px;
-			border-style: solid;
-			border-color: #000;
-			border-radius: 5px;
-		}
 		.title{
 			width: 80%;
 			height: 30px;
 			text-align: center;
 			vertical-align: middle;
-			margin: 20px auto;
+			margin: 15px auto;
 			background-color: pink;
 			border-radius: 25px;
 		}
@@ -79,7 +67,7 @@
 		}
 		.button{
 			height: 25px;
-			margin: 5px;
+			margin: 0px 5px;
 			padding: 5px;
 			display: inline-block;
 			background-color: #D6F0F7;
@@ -89,8 +77,12 @@
 			border-color: #000;
 			border-radius: 5px;
 		}
+		#body{
+			width: 100%;
+			margin-bottom: 50px;
+		}
 		footer{
-			position: relative;
+			position: fixed;
 			bottom: 0px;
 			background-color: #CAD2D9;
 			width: 100%;
@@ -112,4 +104,7 @@
 			height: 20px;
 			margin-bottom: -4px;
 			margin-left: 5px;
+		}
+		.ctrl{
+			background-color: #AC80E8;
 		}
