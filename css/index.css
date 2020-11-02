@@ -90,7 +90,7 @@
 			border-radius: 5px;
 		}
 		footer{
-			position: absolute;
+			position: relative;
 			bottom: 0px;
 			background-color: #CAD2D9;
 			width: 100%;
