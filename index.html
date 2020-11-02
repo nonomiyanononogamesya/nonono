@@ -21,6 +21,7 @@ $(function(){
        	}
 
 		var lang = "jp";
+		var re = 0;
 		
 		for (var i = 0 ;i < no.length; i++) {
 			$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
@@ -34,6 +35,11 @@ $(function(){
 		$(".button").click(function(){
 			w.pause()
 			w = new Audio("voice/" + this.id + ".wav")
+			if(re == 1){
+						$(w).bind("ended", function() {
+		                	w.play();
+		            	});
+					}
 			w.play();
 		})
 
@@ -53,6 +59,11 @@ $(function(){
 				$(".button").click(function(){
 					w.pause()
 					w = new Audio("voice/" + this.id + ".wav")
+					if(re == 1){
+						$(w).bind("ended", function() {
+		                	w.play();
+		            	});
+					}
 					w.play();
 				})
 			}else if(lang == "sc"){
@@ -68,8 +79,14 @@ $(function(){
 				$(".button").click(function(){
 					w.pause()
 					w = new Audio("voice/" + this.id + ".wav")
+					if(re == 1){
+						$(w).bind("ended", function() {
+		                	w.play();
+		            	});
+					}
 					w.play();
 				})
+
 			}
 		})
 	
@@ -82,6 +99,15 @@ $(function(){
         
 //             wav.play();
 // 	})
+	$("#re").click(function(){
+		if (re == 0) {
+			re = 1;
+			$("input[name='re']").attr("checked",true);
+		}else{
+			re = 0;
+			$("input[name='re']").attr("checked",false);
+		}
+	})
 	$("#stop").click(function(){
 		w.pause()
 		w.load()
@@ -112,6 +138,7 @@ $(function(){
 	</div>
 	<div class="title" id="ctrl">控制</div>
 	<div class="voice">
+		<div id="re" class="ctrl"><input type="checkbox" name="re" value="a" disabled="false">循环</div>
 		<div id="stop" class="ctrl">暂停</div>
 	</div>
 	<div id="body" width="100%"></div>
