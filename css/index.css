@@ -42,10 +42,10 @@ a,a span{
 	margin: 0px 10px;
 	color: #000;
 	font-family: 'rori';
-	font-size: 12px;
+	font-size: .75rem;
 }
 #name{
-	font-size: 30px;
+	font-size: 1.75rem;
 	font-style: italic;
 	font-weight: bold;
 
@@ -71,7 +71,7 @@ a,a span{
 	line-height: 100%;
 }
 .button{
-	height: 25px;
+	height: 1.5rem;
 	margin: 0px 5px;
 	padding: 5px;
 	display: inline-block;
@@ -94,16 +94,13 @@ footer{
 	padding: 8px 0px;
 	font-size: .75rem;
 }
-footer td span{
-	font-size: .75rem;
-}
 .link{
 	height: 1.5rem;
 }
 #b,#t{
 	border-radius:50%;
 	height: 1.5rem;
-	margin-bottom: -4px;
+	margin-bottom: -.5rem;
 	margin-left: 5px;
 }
 .ctrl{
