@@ -33,6 +33,7 @@ var no = [{"jp":"普通","sc":"普通","state":1,"voice":[{"jp":"変態じゃな
 												,{"jp":"良かった","sc":"太好啦","file":"taihaola"}
 												,{"jp":"愛してる","sc":"我爱你","file":"woaini"}
 												,{"jp":"お疲れ様","sc":"辛苦了","file":"xinkule"}
+												,{"jp":"じゃあね","sc":"再见","file":"zaijian"}
 		]},{"jp":"色気","sc":"色气","state":1,"voice":[{"jp":"？？？","sc":"？？？","file":"？？？"}
 												,{"jp":"！？","sc":"！？","file":"！？"}
 		]}]
