@@ -48,6 +48,7 @@ $(function(){
 			$("#body").html("")
 			if(lang == "jp"){
 				$("#ctrl").html("コントロール")
+				$("#re span").html("止まるんじゃねぇぞ")
 				$("#stop").html("停止")
 				for (var i = 0 ;i < no.length; i++) {
 					$("#body").append("<div class='title'><span id='t'>" + no[i].jp + "</span></div>")
@@ -68,6 +69,7 @@ $(function(){
 				})
 			}else if(lang == "sc"){
 				$("#ctrl").html("控制")
+				$("#re span").html("不要停下来")
 				$("#stop").html("暂停")
 				for (var i = 0 ;i < no.length; i++) {
 					$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
@@ -90,15 +92,6 @@ $(function(){
 			}
 		})
 	
-// 	var a = "dao.wav";
-//         var wav = new Audio(a);
-// $(wav).bind("ended", function() {
-//                 wav.play();
-//             });
-// 	$("#b1").click(function(){
-        
-//             wav.play();
-// 	})
 	$("#re").click(function(){
 		if (re == 0) {
 			re = 1;
@@ -138,7 +131,7 @@ $(function(){
 	</div>
 	<div class="title" id="ctrl">控制</div>
 	<div class="voice">
-		<div id="re" class="ctrl"><input type="checkbox" name="re" value="a" disabled="false">循环</div>
+		<div id="re" class="ctrl"><input type="checkbox" name="re" value="a" disabled="false"><span>不要停下来</span></div>
 		<div id="stop" class="ctrl">暂停</div>
 	</div>
 	<div id="body" width="100%"></div>
