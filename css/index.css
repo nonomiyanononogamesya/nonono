@@ -41,7 +41,7 @@
 			font-size: 12px;
 		}
 		#name{
-			font-size: 35px;
+			font-size: 30px;
 			font-style: italic;
 			font-weight: bold;
 
@@ -81,7 +81,7 @@
 			height: 25px;
 			margin: 5px;
 			padding: 5px;
-			display: inline;
+			display: inline-block;
 			background-color: #D6F0F7;
 			cursor: pointer;
 			border-width: 2px;

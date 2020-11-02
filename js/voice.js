@@ -14,6 +14,7 @@ var no = [{"jp":"普通","sc":"普通","state":1,"voice":[{"jp":"変態じゃな
 												,{"jp":"デンデンデンデン","sc":"噔噔蹬蹬","file":"deng"}
 												,{"jp":"一緒に行こう","sc":"一起去吧","file":"yiqiqu"}
 												,{"jp":"ののの一番かわいい","sc":"我最可爱","file":"wozuikeai"}
+		]},{"jp":"挨拶","sc":"问候","state":1,"voice":[
 		]},{"jp":"悲鳴","sc":"怪叫","state":1,"voice":[{"jp":"あびゃー","sc":"abia","file":"abia"}
 												,{"jp":"いやいやいやいや","sc":"不要不要不要不要","file":"iya"}
 												,{"jp":"あ！あ～","sc":"啊！啊～","file":"aa"}
