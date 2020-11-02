@@ -20,7 +20,7 @@
 			background-image:url('image/2.jpg');
 			background-repeat:no-repeat;
 			background-attachment:fixed;
-			background-position:right;
+			background-position:left;
 			background-size:cover;
 		}
 		#head{
@@ -43,6 +43,21 @@
 
 
 		}
+		#ctrl{
+			background-color: #E3D8E9;
+		}
+		.ctrl{
+			height: 25px;
+			margin: 5px;
+			padding: 5px;
+			display: inline;
+			background-color: #AC80E8;
+			cursor: pointer;
+			border-width: 2px;
+			border-style: solid;
+			border-color: #000;
+			border-radius: 5px;
+		}
 		.title{
 			width: 80%;
 			height: 30px;
@@ -59,7 +74,7 @@
 		.t{
 			line-height: 100%;
 		}
-		.button,.ctrl{
+		.button{
 			height: 25px;
 			margin: 5px;
 			padding: 5px;
@@ -76,6 +91,17 @@
 <script src="js/voice.js"></script>
 <script>
 $(function(){
+
+		var system ={};
+       	var p = navigator.platform;
+       	system.win = p.indexOf("Win") == 0;
+       	system.mac = p.indexOf("Mac") == 0;
+       	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+       	if(system.win||system.mac||system.xll){//如果是电脑
+        	       
+       	}else{  //如果是手机
+              //$("#body").css("background-color","")
+       	}
 
 		var lang = "jp";
 		
@@ -133,6 +159,18 @@ $(function(){
 		w.load()
 	})
  })
+</script>
+<script type="text/javascript">
+    var system ={};
+       var p = navigator.platform;
+       system.win = p.indexOf("Win") == 0;
+       system.mac = p.indexOf("Mac") == 0;
+       system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+       if(system.win||system.mac||system.xll){//如果是电脑跳转到
+               
+       }else{  //如果是手机,跳转到
+              window.location.href="#";
+       }
 </script>
 </head>
 <body>
