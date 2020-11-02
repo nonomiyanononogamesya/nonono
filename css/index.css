@@ -93,8 +93,8 @@
 			position: absolute;
 			bottom: 0px;
 			background-color: #CAD2D9;
-			width: 96%;
-			padding: 8px 2%;
+			width: 100%;
+			padding: 8px 0px;
 			font-size: 12px;
 		}
 		footer td{
