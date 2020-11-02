@@ -115,6 +115,7 @@ $(function(){
 		
 		var w = new Audio()
 		$(".button").click(function(){
+			w.pause()
 			w = new Audio("voice/" + this.id + ".wav")
 			w.play();
 		})
@@ -132,6 +133,11 @@ $(function(){
 						$("#v" +  i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].jp + "</div>")
 					}
 				}
+				$(".button").click(function(){
+					w.pause()
+					w = new Audio("voice/" + this.id + ".wav")
+					w.play();
+				})
 			}else if(lang == "sc"){
 				$("#ctrl").html("控制")
 				$("#stop").html("暂停")
@@ -142,6 +148,11 @@ $(function(){
 						$("#v" +  i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
 					}
 				}
+				$(".button").click(function(){
+					w.pause()
+					w = new Audio("voice/" + this.id + ".wav")
+					w.play();
+				})
 			}
 		})
 	
@@ -159,18 +170,6 @@ $(function(){
 		w.load()
 	})
  })
-</script>
-<script type="text/javascript">
-    var system ={};
-       var p = navigator.platform;
-       system.win = p.indexOf("Win") == 0;
-       system.mac = p.indexOf("Mac") == 0;
-       system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-       if(system.win||system.mac||system.xll){//如果是电脑跳转到
-               
-       }else{  //如果是手机,跳转到
-              window.location.href="#";
-       }
 </script>
 </head>
 <body>
