@@ -8,9 +8,9 @@
 	font-family: 'rori';
 	font-size: 20px;
 	-webkit-user-select:none;
-		-moz-user-select:none;
-		-ms-user-select:none;
-		user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
 }
 body{ 
 	background-image:url('../image/2.jpg');
@@ -42,7 +42,7 @@ a,a span{
 	margin: 0px 10px;
 	color: #000;
 	font-family: 'rori';
-	font-size: 12px;
+	font-size: 16px;
 }
 #name{
 	font-size: 30px;
@@ -51,6 +51,7 @@ a,a span{
 
 }
 #ctrl{
+	margin-top: 60px;
 	background-color: #E3D8E9;
 }
 .title{
@@ -94,7 +95,7 @@ footer{
 	font-size: 12px;
 }
 footer td{
-	font-size: 12px;
+	font-size: 16px;
 }
 #by{
 	margin: 0px 30px;
