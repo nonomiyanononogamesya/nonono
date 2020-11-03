@@ -2,7 +2,7 @@
 
 <head>
 	<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
-	<link rel="icon" href="image/youxishe.png">
+	<link rel="icon" href="image/youxishe.png" sizes="32x32">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<style>
 	</style>
@@ -31,21 +31,6 @@
 				for (var j = 0; j < no[i].voice.length; j++) {
 					no[i].voice[j].file
 					$("#v" + i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
-		$("#lang").change(function(){
-			lang = $("#lang").val();
-			$("#body").html("")
-			if(lang == "jp"){
-				$("#name").html("野々宮のののボタン")
-				$("#yxs").html("野々宮のののゲーム社")
-				$("#ctrl").html("コントロール")
-				$("#re span").html("止まるんじゃねぇぞ")
-				$("#stop").html("停止")
-				for (var i = 0 ;i < no.length; i++) {
-					$("#body").append("<div class='title'><span id='t'>" + no[i].jp + "</span></div>")
-					$("#body").append("<div class='voice' id='v" + i + "'></div>")
-					for(var j = 0 ; j < no[i].voice.length ; j++){
-						$("#v" +  i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].jp + "</div>")
-					}
 				}
 			}
 			var voices = $(".button:not(.ctrl)");
@@ -61,19 +46,6 @@
 						});
 					}
 					w.play();
-				})
-			}else if(lang == "sc"){
-				$("#name").html("野野宫ののの按钮")
-				$("#yxs").html("野野宫ののの游戏社")
-				$("#ctrl").html("控制")
-				$("#re span").html("不要停下来")
-				$("#stop").html("暂停")
-				for (var i = 0 ;i < no.length; i++) {
-					$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
-					$("#body").append("<div class='voice' id='v" + i + "'></div>")
-					for(var j = 0 ; j < no[i].voice.length ; j++){
-						$("#v" +  i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
-					}
 				}
 			})
 
@@ -215,7 +187,7 @@
 							src="image/twitter.png"></a>
 				</td>
 				<td align="right">
-					
+					<!-- <a href="http://www.wuanshe.club/" target="blank"><span id="was">小东人鱼按钮</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				</td>
 			</tr>
 		</table>
