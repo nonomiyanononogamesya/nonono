@@ -1,198 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 
 <head>
-	<title>野々宮のののボタン</title>
-	<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
-	<link rel="icon" href="image/youxishe.png" sizes="32x32">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<style>
-	</style>
-	<script src="js/jquery-1.8.3.js"></script>
-	<script src="js/voice.js"></script>
-	<script>
-		$(function () {
-
-			var system = {};
-			var p = navigator.platform;
-			system.win = p.indexOf("Win") == 0;
-			system.mac = p.indexOf("Mac") == 0;
-			system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-			if (system.win || system.mac || system.xll) {//如果是电脑
-
-			} else {  //如果是手机
-				$("body").css("background-position", "-500px 0px")
-			}
-
-			var lang = "jp";
-			var re = 0;
-
-			for (var i = 0; i < no.length; i++) {
-				$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
-				$("#body").append("<div class='voice' id='v" + i + "'></div>")
-				for (var j = 0; j < no[i].voice.length; j++) {
-					no[i].voice[j].file
-					$("#v" + i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
-				}
-			}
-			var voices = $(".button:not(.ctrl)");
-
-			var w = new Audio()
-			$(".button").click(function () {
-				if (!$(this).hasClass("ctrl")) {
-					w.pause()
-					w.src = "voice/" + this.id + ".wav";
-					if (re == 1) {
-						$(w).bind("ended", function () {
-							w.play();
-						});
-					}
-					w.play();
-				}
-			})
-
-			// 注册音频播放/停止事件
-			w.addEventListener("ended", function () {
-				$("#play_status").text("暂无播放");
-			});
-			w.addEventListener("playing", function () {
-				console.log(w.src.split("/")[w.src.split("/").length - 1].split(".")[0]);
-				$("#play_status").text("正在播放：" + $("#" + w.src.split("/")[w.src.split("/").length - 1].split(".")[0]).text());
-			});
-
-			$("#lang").change(function () {
-				lang = $("#lang").val();
-				$("#body").html("")
-				if (lang == "jp") {
-					$("#name").html("野々宮のののボタン")
-					$("#yxs").html("野々宮のののゲーム社")
-					$("#was").html("小東ひとなボタン")
-					$("#ctrl").html("コントロール")
-					$("#re span").html("止まるんじゃねぇぞ")
-					$("#stop").html("停止")
-					$("#random").html("ランダム")
-					$("#play_status").html("再生なし")
-					for (var i = 0; i < no.length; i++) {
-						$("#body").append("<div class='title'><span id='t'>" + no[i].jp + "</span></div>")
-						$("#body").append("<div class='voice' id='v" + i + "'></div>")
-						for (var j = 0; j < no[i].voice.length; j++) {
-							$("#v" + i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].jp + "</div>")
-						}
-					}
-					// 注册音频播放/停止事件
-					w.addEventListener("ended", function () {
-						$("#play_status").text("再生なし");
-					});
-					w.addEventListener("playing", function () {
-						console.log(w.src.split("/")[w.src.split("/").length - 1].split(".")[0]);
-						$("#play_status").text("現在再生：" + $("#" + w.src.split("/")[w.src.split("/").length - 1].split(".")[0]).text());
-					});
-				} else if (lang == "sc") {
-					$("#name").html("野野宫ののの按钮")
-					$("#yxs").html("野野宫ののの游戏社")
-					$("#was").html("小东人鱼按钮")
-					$("#ctrl").html("控制")
-					$("#re span").html("不要停下来")
-					$("#stop").html("暂停")
-					$("#random").html("帮我选一个")
-					$("#play_status").html("暂无播放")
-					for (var i = 0; i < no.length; i++) {
-						$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
-						$("#body").append("<div class='voice' id='v" + i + "'></div>")
-						for (var j = 0; j < no[i].voice.length; j++) {
-							$("#v" + i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
-						}
-					}
-					// 注册音频播放/停止事件
-					w.addEventListener("ended", function () {
-						$("#play_status").text("暂无播放");
-					});
-					w.addEventListener("playing", function () {
-						console.log(w.src.split("/")[w.src.split("/").length - 1].split(".")[0]);
-						$("#play_status").text("正在播放：" + $("#" + w.src.split("/")[w.src.split("/").length - 1].split(".")[0]).text());
-					});
-				}
-			})
-
-			$("#re").click(function () {
-				if (re == 0) {
-					re = 1;
-					$("input[name='re']").attr("checked", true);
-				} else {
-					re = 0;
-					$("input[name='re']").attr("checked", false);
-				}
-			})
-			$("#stop").click(function () {
-				w.pause()
-				w.load()
-			})
-
-			// 随机
-			$("#random").click(function () {
-				let choice = voices[Math.floor((Math.random() * voices.length))];
-				w.pause()
-				w.src = "voice/" + choice.id + ".wav";
-				if (re == 1) {
-					$(w).bind("ended", function () {
-						w.play();
-					});
-				}
-				w.play();
-			})
-		})
-	</script>
+	<title>野々宮ののの</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
-<body>
-	<div id="head">
-		<table>
-			<tr>
-				<td width="25%">
-					<a href="https://space.bilibili.com/441403698" target="blank"><img class="link"
-							src="image/bilibili.png"></a>
-					<a href="https://www.youtube.com/channel/UCiexEBp7-D46FXUtQ-BpgWg?sub_confirmation=1"
-						target="blank"><img class="link" src="image/youtube.png"></a>
-					<a href="https://twitter.com/nonomiyanonono" target="blank"><img class="link"
-							src="image/twitter.png"></a>
-				</td>
-				<td width="50%" align="center">
-					<span id="name">野野宫ののの按钮</span>
-				</td>
-				<td width="25%" align="right">
-					language：
-					<select id="lang">
-						<option value="sc">简体中文</option>
-						<option value="jp">日本語</option>
-					</select>
-				</td>
-			</tr>
-		</table>
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<img src="assets/icons/audiotrack-24px.svg">
+			</div>
+			<div class="content">
+				<div class="inner">
+					<audio id="bgm"></audio>
+					<div class="lrc"></div>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="./button/">の按钮&nbsp;バタン</a></li>
+					<li><a href="">の歌</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">
+				By <a href="https://space.bilibili.com/582466811" target="blank">
+					野野宫ののの游戏社
+				</a>
+			</p>
+		</footer>
+
 	</div>
-	<div class="title" id="ctrl">控制</div>
-	<div class="voice">
-		<div id="re" class="button ctrl"><input type="checkbox" name="re" value="a" disabled="false"><span>不要停下来</span>
-		</div>
-		<div id="stop" class="button ctrl">暂停</div>
-		<div id="random" class="button ctrl">帮我选一个</div>
-		<p id="play_status">暂无播放</p>
-	</div>
-	<div id="body"></div>
-	<footer>
-		<table width="100%">
-			<tr>
-				<td valign="middle">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					by<a href="https://space.bilibili.com/582466811" target="blank"><span id="yxs">野野宫ののの游戏社</span><img
-							id="b" class="link" src="image/youxishe.jpg"></a>
-					<a href="https://twitter.com/nomiyanogamesya" target="blank"><img id="t" class="link"
-							src="image/twitter.png"></a>
-				</td>
-				<td align="right">
-					<!-- <a href="http://www.wuanshe.club/" target="blank"><span id="was">小东人鱼按钮</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-				</td>
-			</tr>
-		</table>
-	</footer>
+
+	<!-- BG -->
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script type="text/javascript">    $(function () {
+		$(document).ready(function(){
+			$("#bgm").attr("autoplay", "autoplay").attr("src", "assets/audio/奏.mp3");
+		})
+			// 歌词
+			function parseLyric(text) {
+				//按行分割歌词            
+				let lyricArr = text.split('\n');
+				let result = [];
+				//新建一个数组存放最后结果      
+				//遍历分割后的歌词数组，将格式化后的时间节点，歌词填充到result数组           
+				for (i = 0; i < lyricArr.length; i++) {
+					let playTimeArr = lyricArr[i].match(/\[\d{2}:\d{2}((\.|\:)\d{2})\]/g);
+					//正则匹配播放时间               
+					let lineLyric = "";
+					if (lyricArr[i].split(playTimeArr).length > 0) {
+						lineLyric = lyricArr[i].split(playTimeArr);
+					}
+					if (playTimeArr != null) {
+						for (let j = 0; j < playTimeArr.length; j++) {
+							let time = playTimeArr[j].substring(1, playTimeArr[j].indexOf("]")).split(":");                        //数组填充   
+							result.push({ time: (parseInt(time[0]) * 60 + parseFloat(time[1])).toFixed(4), content: String(lineLyric).substr(1) });
+						}
+					}
+				}
+				return result;
+			}
+			// 这里请按照格式放入相应歌词--开始
+			// 格式可能看着很复杂,其实是根据lrc歌词文件换句前加入\n 换行符,然后删除多余空行.即可!        
+			let text = "[00:00.00]奏 かなで\n[00:42.03]改札の前つなぐ手と手\n[00:47.99]いつものざわめき、新しい風\n[00:54.80]明るく見送るはずだったのに\n[01:00.87]うまく笑えずに君を見ていた\n[01:08.95]君が大人になってくその季節が\n[01:15.22]悲しい歌で溢れないように\n[01:21.56]最後に何か君に伝えたくて\n[01:27.54]「さよなら」に代わる言葉を僕は探してた\n[01:41.21]君の手を引くその役目が僕の使命だなんて\n[01:51.02]そう思ってた\n[01:56.14]だけど今わかったんだ　僕らならもう\n[02:02.14]重ねた日々がほら、導いてくれる\n[02:08.49]君が大人になってくその時間が\n[02:14.43]降り積もる間に僕も変わってく\n[02:20.81]たとえばそこにこんな歌があれば\n[02:26.83]ふたりはいつもどんな時もつながっていける\n[03:05.26]突然ふいに鳴り響くベルの音\n[03:11.97]焦る僕　解ける手　離れてく君\n[03:18.38]夢中で呼び止めて　抱き締めたんだ\n[03:24.88]君がどこに行ったって僕の聲で守るよ\n[03:35.70]君が僕の前に現れた日から\n[03:42.44]何もかもが違くみえたんだ\n[03:48.85]朝も光も涙も、歌う聲も\n[03:54.93]君が輝きをくれたんだ\n[04:01.25]抑えきれない思いをこの聲に乗せて\n[04:08.03]遠く君の街へ屆けよう\n[04:14.51]たとえばそれがこんな歌だったら\n[04:20.63]ぼくらは何処にいたとしてもつながっていける\n"
+			// 这里请按照格式放入相应歌词--结束        
+			let audio = document.querySelector('audio');
+			let result = parseLyric(text); //执行lyc解析        // 把生成的数据显示到界面上去        
+			let $ul = $("<ul></ul>");
+			for (let i = 0; i < result.length; i++) {
+				let $li = $("<li></li>").text(result[i].content);
+				$ul.append($li);
+			}
+			$(".lrc").append($ul);
+			let lineNo = 0;
+			// 当前行歌词        
+			let preLine = 1; // 当播放6行后开始滚动歌词
+			let lineHeight = -30; // 每次滚动的距离        // 滚动播放 歌词高亮  增加类名active  
+			function highLight() {
+				let $li = $("li"); $li.eq(lineNo).addClass("active").siblings().removeClass("active");
+				if (lineNo > preLine) {
+					$ul.stop(true, true).animate({ top: (lineNo - preLine) * lineHeight });
+				}
+			}
+			highLight();
+			// 播放的时候不断渲染   
+			audio.addEventListener("timeupdate", function () {
+				if (lineNo == result.length) return; if ($("li").eq(0).hasClass("active")) {
+					$("ul").css("top", "0");
+				}
+				lineNo = getLineNo(audio.currentTime); highLight();
+				lineNo++;
+			});
+			// 当快进或者倒退的时候，找到最近的后面那个
+			function getLineNo(currentTime) {
+				if (currentTime >= parseFloat(result[lineNo].time)) {                // 快进                
+					for (let i = result.length - 1; i >= lineNo; i--) {
+						if (currentTime >= parseFloat(result[i].time)) {
+							return i;
+						}
+					}
+				} else {
+					// 后退                
+					for (let i = 0; i <= lineNo; i++) {
+						if (currentTime <= parseFloat(result[i].time)) {
+							return i - 1;
+						}
+					}
+				}
+			}
+			//播放结束自动回到开头 
+			audio.addEventListener("ended", function () {
+				lineNo = 0;
+				highLight();
+				audio.play();
+				$("ul").css("top", "0");
+			});
+		});    
+	</script>
 </body>
 
 </html>
