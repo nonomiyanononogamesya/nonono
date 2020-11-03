@@ -1,128 +1,158 @@
 <html>
+
 <head>
 	<meta http-equiv="content-type" content="txt/html; charset=utf-8" />
 	<link rel="icon" href="image/youxishe.png" sizes="32x32">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<style>
 	</style>
-<script src="js/jquery-1.8.3.js"></script>
-<script src="js/voice.js"></script>
-<script>
-$(function(){
+	<script src="js/jquery-1.8.3.js"></script>
+	<script src="js/voice.js"></script>
+	<script>
+		$(function () {
 
-		var system ={};
-       	var p = navigator.platform;
-       	system.win = p.indexOf("Win") == 0;
-       	system.mac = p.indexOf("Mac") == 0;
-       	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-       	if(system.win||system.mac||system.xll){//如果是电脑
-        	       
-       	}else{  //如果是手机
-              $("body").css("background-position","-500px 0px")
-       	}
+			var system = {};
+			var p = navigator.platform;
+			system.win = p.indexOf("Win") == 0;
+			system.mac = p.indexOf("Mac") == 0;
+			system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+			if (system.win || system.mac || system.xll) {//如果是电脑
 
-		var lang = "jp";
-		var re = 0;
-		
-		for (var i = 0 ;i < no.length; i++) {
-			$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
-			$("#body").append("<div class='voice' id='v" + i + "'></div>")
-			for(var j = 0 ; j < no[i].voice.length ; j++){
-				$("#v" +  i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
+			} else {  //如果是手机
+				$("body").css("background-position", "-500px 0px")
 			}
-		}
-		
-		var w = new Audio()
-		$(".button").click(function(){
-			w.pause()
-			w = new Audio("voice/" + this.id + ".wav")
-			if(re == 1){
-						$(w).bind("ended", function() {
-		                	w.play();
-		            	});
-					}
-			w.play();
-		})
 
-		$("#lang").change(function(){
-			lang = $("#lang").val();
-			$("#body").html("")
-			if(lang == "jp"){
-				$("#name").html("野々宮のののボタン")
-				$("#yxs").html("野々宮のののゲーム社")
-				$("#was").html("小東ひとなボタン")
-				$("#ctrl").html("コントロール")
-				$("#re span").html("止まるんじゃねぇぞ")
-				$("#stop").html("停止")
-				for (var i = 0 ;i < no.length; i++) {
-					$("#body").append("<div class='title'><span id='t'>" + no[i].jp + "</span></div>")
-					$("#body").append("<div class='voice' id='v" + i + "'></div>")
-					for(var j = 0 ; j < no[i].voice.length ; j++){
-						$("#v" +  i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].jp + "</div>")
-					}
+			var lang = "jp";
+			var re = 0;
+
+			for (var i = 0; i < no.length; i++) {
+				$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
+				$("#body").append("<div class='voice' id='v" + i + "'></div>")
+				for (var j = 0; j < no[i].voice.length; j++) {
+					no[i].voice[j].file
+					$("#v" + i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
 				}
-				$(".button").click(function(){
+			}
+			var voices = $(".button:not(.ctrl)");
+
+			var w = new Audio()
+			$(".button").click(function () {
+				if (!$(this).hasClass("ctrl")) {
 					w.pause()
-					w = new Audio("voice/" + this.id + ".wav")
-					if(re == 1){
-						$(w).bind("ended", function() {
-		                	w.play();
-		            	});
+					w.src = "voice/" + this.id + ".wav";
+					if (re == 1) {
+						$(w).bind("ended", function () {
+							w.play();
+						});
 					}
 					w.play();
-				})
-			}else if(lang == "sc"){
-				$("#name").html("野野宫ののの按钮")
-				$("#yxs").html("野野宫ののの游戏社")
-				$("#was").html("小东人鱼按钮")
-				$("#ctrl").html("控制")
-				$("#re span").html("不要停下来")
-				$("#stop").html("暂停")
-				for (var i = 0 ;i < no.length; i++) {
-					$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
-					$("#body").append("<div class='voice' id='v" + i + "'></div>")
-					for(var j = 0 ; j < no[i].voice.length ; j++){
-						$("#v" +  i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
-					}
 				}
-				$(".button").click(function(){
-					w.pause()
-					w = new Audio("voice/" + this.id + ".wav")
-					if(re == 1){
-						$(w).bind("ended", function() {
-		                	w.play();
-		            	});
-					}
-					w.play();
-				})
+			})
 
-			}
+			// 注册音频播放/停止事件
+			w.addEventListener("ended", function () {
+				$("#play_status").text("暂无播放");
+			});
+			w.addEventListener("playing", function () {
+				console.log(w.src.split("/")[w.src.split("/").length - 1].split(".")[0]);
+				$("#play_status").text("正在播放：" + $("#" + w.src.split("/")[w.src.split("/").length - 1].split(".")[0]).text());
+			});
+
+			$("#lang").change(function () {
+				lang = $("#lang").val();
+				$("#body").html("")
+				if (lang == "jp") {
+					$("#name").html("野々宮のののボタン")
+					$("#yxs").html("野々宮のののゲーム社")
+					$("#was").html("小東ひとなボタン")
+					$("#ctrl").html("コントロール")
+					$("#re span").html("止まるんじゃねぇぞ")
+					$("#stop").html("停止")
+					$("#random").html("ランダム")
+					$("#play_status").html("再生なし")
+					for (var i = 0; i < no.length; i++) {
+						$("#body").append("<div class='title'><span id='t'>" + no[i].jp + "</span></div>")
+						$("#body").append("<div class='voice' id='v" + i + "'></div>")
+						for (var j = 0; j < no[i].voice.length; j++) {
+							$("#v" + i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].jp + "</div>")
+						}
+					}
+					// 注册音频播放/停止事件
+					w.addEventListener("ended", function () {
+						$("#play_status").text("再生なし");
+					});
+					w.addEventListener("playing", function () {
+						console.log(w.src.split("/")[w.src.split("/").length - 1].split(".")[0]);
+						$("#play_status").text("現在再生：" + $("#" + w.src.split("/")[w.src.split("/").length - 1].split(".")[0]).text());
+					});
+				} else if (lang == "sc") {
+					$("#name").html("野野宫ののの按钮")
+					$("#yxs").html("野野宫ののの游戏社")
+					$("#was").html("小东人鱼按钮")
+					$("#ctrl").html("控制")
+					$("#re span").html("不要停下来")
+					$("#stop").html("暂停")
+					$("#random").html("帮我选一个")
+					$("#play_status").html("暂无播放")
+					for (var i = 0; i < no.length; i++) {
+						$("#body").append("<div class='title'><span id='t'>" + no[i].sc + "</span></div>")
+						$("#body").append("<div class='voice' id='v" + i + "'></div>")
+						for (var j = 0; j < no[i].voice.length; j++) {
+							$("#v" + i).append("<div class='button' id='" + no[i].voice[j].file + "'>" + no[i].voice[j].sc + "</div>")
+						}
+					}
+					// 注册音频播放/停止事件
+					w.addEventListener("ended", function () {
+						$("#play_status").text("暂无播放");
+					});
+					w.addEventListener("playing", function () {
+						console.log(w.src.split("/")[w.src.split("/").length - 1].split(".")[0]);
+						$("#play_status").text("正在播放：" + $("#" + w.src.split("/")[w.src.split("/").length - 1].split(".")[0]).text());
+					});
+				}
+			})
+
+			$("#re").click(function () {
+				if (re == 0) {
+					re = 1;
+					$("input[name='re']").attr("checked", true);
+				} else {
+					re = 0;
+					$("input[name='re']").attr("checked", false);
+				}
+			})
+			$("#stop").click(function () {
+				w.pause()
+				w.load()
+			})
+
+			// 随机
+			$("#random").click(function () {
+				let choice = voices[Math.floor((Math.random() * voices.length))];
+				w.pause()
+				w.src = "voice/" + choice.id + ".wav";
+				if (re == 1) {
+					$(w).bind("ended", function () {
+						w.play();
+					});
+				}
+				w.play();
+			})
 		})
-	
-	$("#re").click(function(){
-		if (re == 0) {
-			re = 1;
-			$("input[name='re']").attr("checked",true);
-		}else{
-			re = 0;
-			$("input[name='re']").attr("checked",false);
-		}
-	})
-	$("#stop").click(function(){
-		w.pause()
-		w.load()
-	})
- })
-</script>
+	</script>
 </head>
+
 <body>
 	<div id="head">
 		<table>
 			<tr>
 				<td width="25%">
-					<a href="https://space.bilibili.com/441403698" target="blank"><img class="link" src="image/bilibili.png"></a>
-					<a href="https://www.youtube.com/channel/UCiexEBp7-D46FXUtQ-BpgWg?sub_confirmation=1" target="blank"><img class="link" src="image/youtube.png"></a>
-					<a href="https://twitter.com/nonomiyanonono" target="blank"><img class="link" src="image/twitter.png"></a>
+					<a href="https://space.bilibili.com/441403698" target="blank"><img class="link"
+							src="image/bilibili.png"></a>
+					<a href="https://www.youtube.com/channel/UCiexEBp7-D46FXUtQ-BpgWg?sub_confirmation=1"
+						target="blank"><img class="link" src="image/youtube.png"></a>
+					<a href="https://twitter.com/nonomiyanonono" target="blank"><img class="link"
+							src="image/twitter.png"></a>
 				</td>
 				<td width="50%" align="center">
 					<span id="name">野野宫ののの按钮</span>
@@ -139,8 +169,11 @@ $(function(){
 	</div>
 	<div class="title" id="ctrl">控制</div>
 	<div class="voice">
-		<div id="re" class="button ctrl"><input type="checkbox" name="re" value="a" disabled="false"><span>不要停下来</span></div>
+		<div id="re" class="button ctrl"><input type="checkbox" name="re" value="a" disabled="false"><span>不要停下来</span>
+		</div>
 		<div id="stop" class="button ctrl">暂停</div>
+		<div id="random" class="button ctrl">帮我选一个</div>
+		<p id="play_status">暂无播放</p>
 	</div>
 	<div id="body"></div>
 	<footer>
@@ -148,14 +181,17 @@ $(function(){
 			<tr>
 				<td valign="middle">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					by<a href="https://space.bilibili.com/582466811" target="blank"><span id="yxs">野野宫ののの游戏社</span><img id="b" class="link" src="image/youxishe.jpg"></a>
-					<a href="https://twitter.com/nomiyanogamesya" target="blank"><img id="t" class="link" src="image/twitter.png"></a>
+					by<a href="https://space.bilibili.com/582466811" target="blank"><span id="yxs">野野宫ののの游戏社</span><img
+							id="b" class="link" src="image/youxishe.jpg"></a>
+					<a href="https://twitter.com/nomiyanogamesya" target="blank"><img id="t" class="link"
+							src="image/twitter.png"></a>
 				</td>
 				<td align="right">
 					<!-- <a href="http://www.wuanshe.club/" target="blank"><span id="was">小东人鱼按钮</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 				</td>
 			</tr>
-		</table>	
+		</table>
 	</footer>
 </body>
+
 </html>
