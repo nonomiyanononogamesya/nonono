@@ -10,6 +10,7 @@
 	<title>野々宮ののの</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="icon" href="assets/image/youxishe.png" sizes="32x32">
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -60,9 +61,19 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script type="text/javascript">    $(function () {
-		$(document).ready(function(){
-			$("#bgm").attr("autoplay", "autoplay").attr("src", "assets/audio/奏.mp3");
-		})
+			var system = {};
+			var p = navigator.platform;
+			system.win = p.indexOf("Win") == 0;
+			system.mac = p.indexOf("Mac") == 0;
+			system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+			if (system.win || system.mac || system.xll) {//如果是电脑
+
+			} else {  //如果是手机
+				$("body").css("background-position", "-500px 0px")
+			}
+			$(document).ready(function () {
+				$("#bgm").attr("autoplay", "autoplay").attr("src", "assets/audio/奏.mp3");
+			})
 			// 歌词
 			function parseLyric(text) {
 				//按行分割歌词            
