@@ -10,7 +10,7 @@
 	<title>野々宮ののの</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="icon" href="assets/image/youxishe.png" sizes="32x32">
+	<link rel="icon" href="assets/images/youxishe.png" sizes="32x32">
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -24,7 +24,7 @@
 		<!-- Header -->
 		<header id="header">
 			<div class="logo">
-				<img src="assets/icons/audiotrack-24px.svg">
+				<img id="music" src="assets/icons/audiotrack-24px.svg">
 			</div>
 			<div class="content">
 				<div class="inner">
@@ -34,7 +34,7 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="./button/">の按钮&nbsp;バタン</a></li>
+					<li><a href="./button/">の按钮&nbsp;ボタン</a></li>
 					<li><a href="">の歌</a></li>
 				</ul>
 			</nav>
@@ -61,19 +61,36 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script type="text/javascript">    $(function () {
-			var system = {};
-			var p = navigator.platform;
-			system.win = p.indexOf("Win") == 0;
-			system.mac = p.indexOf("Mac") == 0;
-			system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-			if (system.win || system.mac || system.xll) {//如果是电脑
-
-			} else {  //如果是手机
-				$("body").css("background-position", "-500px 0px")
+			var isMobile = /Android|webOS|iPhone|iPad|BlackBerry/i.test(navigator.userAgent)
+			if (isMobile) {
+				// 当前网页在手机端打开
+				$("#bg").attr("id", "bg_mobile");
+			} else {
+				// 当前网页在PC端打开
 			}
 			$(document).ready(function () {
 				$("#bgm").attr("autoplay", "autoplay").attr("src", "assets/audio/奏.mp3");
+				let audio = document.querySelector('audio');
+				if (audio.paused) {
+					$(this).attr("src", "assets/icons/audiotrack-24px.svg");
+					audio.play();
+				} else {
+					$(this).attr("src", "assets/icons/music_off-24px.svg");
+					audio.pause();
+				}
 			})
+
+			$("#music").click(function () {
+				let audio = document.querySelector('audio');
+				if (audio.paused) {
+					$(this).attr("src", "assets/icons/audiotrack-24px.svg");
+					audio.play();
+				} else {
+					$(this).attr("src", "assets/icons/music_off-24px.svg");
+					audio.pause();
+				}
+			})
+
 			// 歌词
 			function parseLyric(text) {
 				//按行分割歌词            
