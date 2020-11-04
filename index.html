@@ -20,6 +20,10 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
+		<div class="language">
+			<img src="assets/icons/language.svg">
+			<p>中</p>
+		</div>
 
 		<!-- Header -->
 		<header id="header">
@@ -34,8 +38,8 @@
 			</div>
 			<nav>
 				<ul>
-					<li><a href="./button/">の按钮&nbsp;ボタン</a></li>
-					<li><a href="./music/">の歌</a></li>
+					<li><a id="nobutton" href="./nobutton/">の按钮</a></li>
+					<li><a id="nomusic" href="./nomusic/">の音乐</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -43,7 +47,7 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">
-				By <a href="https://space.bilibili.com/582466811" target="blank">
+				By <a id="footer_name" href="https://space.bilibili.com/582466811" target="blank">
 					野野宫ののの游戏社
 				</a>
 			</p>
@@ -82,6 +86,20 @@
 					// 当前网页在PC端打开
 				}
 			}
+
+			$(".language").click(function(){
+				if($(".language").children("p").text() == "あ"){
+					$(".language").children("p").text("中");
+					$("#nobutton").text("の按钮");
+					$("#nomusic").text("の音乐");
+					$("#footer_name").text("野野宫ののの游戏社");
+				}else{
+					$(".language").children("p").text("あ");
+					$("#nobutton").text("のボタン");
+					$("#nomusic").text("の音楽");
+					$("#footer_name").text("野々宮のののゲーム社");
+				}
+			})
 
 			$("#music").click(function () {
 				let audio = document.querySelector('audio');

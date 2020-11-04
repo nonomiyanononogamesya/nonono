@@ -1,19 +1,9 @@
-var no = [{"jp":"普通","sc":"普通","state":1,"voice":[{"jp":"自己紹介","sc":"自我介绍","file":"ziwojieshao"}
-												,{"jp":"おじさん","sc":"大叔","file":"ojisan"}
-												,{"jp":"変態じゃないから","sc":"不是变态啊","file":"hentaijyanai"}
+var no = [{"jp":"普通","sc":"普通","state":1,"voice":[{"jp":"変態じゃないから","sc":"不是变态啊","file":"hentaijyanai"}
 												,{"jp":"頑張れ頑張れ","sc":"加油加油","file":"jiayou"}
 												,{"jp":"どうしよう","sc":"怎么办","file":"doushiyou"}
 												,{"jp":"の↓の↑の↑だよ","sc":"是no↓no↑no↑","file":"nodayo"}
 												,{"jp":"のののでぶ","sc":"nononodebu","file":"nodebu"}
 												,{"jp":"面白い女 気にだぜ","sc":"有趣的女人 爱了","file":"omoshiroionna"}
-												,{"jp":"DD","sc":"DD","file":"dd"}
-												,{"jp":"ほほほほ","sc":"吼吼吼吼","file":"hohohoho"}
-												,{"jp":"キモー","sc":"恶心心","file":"kimo"}
-												,{"jp":"なんでやねん！","sc":"什么鬼！","file":"nandeyanen"}
-												,{"jp":"お前ら","sc":"你们几个","file":"omaera"}
-		]},{"jp":"のっさん","sc":"no叔","state":1,"voice":[{"jp":"ごちうさ限界化","sc":"点兔限界化","file":"diantu"}
-												,{"jp":"美少女","sc":"美少女","file":"meishaonv"}
-												,{"jp":"太ももとおっぱい","sc":"大腿和奶子","file":"datuinaizi"}												
 		]},{"jp":"萌","sc":"萌","state":1,"voice":[{"jp":"ありがとうバイバイ","sc":"谢谢拜拜","file":"dao"}
 												,{"jp":"キラキラ","sc":"kirakira","file":"kirakira"}
 												,{"jp":"リップロール","sc":"liproll","file":"liproll"}
@@ -24,8 +14,6 @@ var no = [{"jp":"普通","sc":"普通","state":1,"voice":[{"jp":"自己紹介","
 												,{"jp":"デンデンデンデン","sc":"噔噔蹬蹬","file":"deng"}
 												,{"jp":"一緒に行こう","sc":"一起去吧","file":"yiqiqu"}
 												,{"jp":"ののの一番かわいい","sc":"我最可爱","file":"wozuikeai"}
-												,{"jp":"バンバン","sc":"嘣嘣","file":"banban"}
-												,{"jp":"いやあ～","sc":"不要啊～","file":"iyaa"}
 		]},{"jp":"挨拶","sc":"问候","state":1,"voice":[{"jp":"バイバイ","sc":"拜拜","file":"baibai"}
 		]},{"jp":"悲鳴","sc":"怪叫","state":1,"voice":[{"jp":"あびゃー","sc":"abia","file":"abia"}
 												,{"jp":"いやいやいやいや","sc":"不要不要不要不要","file":"iya"}
@@ -33,9 +21,6 @@ var no = [{"jp":"普通","sc":"普通","state":1,"voice":[{"jp":"自己紹介","
 												,{"jp":"あああ","sc":"啊啊啊","file":"aaa"}
 												,{"jp":"えっ！","sc":"诶！","file":"e"}
 												,{"jp":"皿を洗う","sc":"擦盘子","file":"capanzi"}
-												,{"jp":"痛い痛い","sc":"好痛好痛","file":"itaiitai"}
-												,{"jp":"泣き","sc":"哭腔","file":"naki"}
-												,{"jp":"わわわ","sc":"哇哇哇","file":"wawawa"}
 		]},{"jp":"悪口","sc":"粗口","state":1,"voice":[{"jp":"くそ","sc":"可恶","file":"kuso"}
 												,{"jp":"ド畜生やな","sc":"畜生","file":"chikusyou"}
 												,{"jp":"アホやろ","sc":"是不是傻","file":"ahoyaro"}
@@ -44,13 +29,11 @@ var no = [{"jp":"普通","sc":"普通","state":1,"voice":[{"jp":"自己紹介","
 												,{"jp":"この野郎","sc":"你这混蛋","file":"konoyarou"}
 												,{"jp":"うるさい","sc":"无路赛","file":"urusai"}
 												,{"jp":"やんのか","sc":"干架吗","file":"yannoka"}
-												,{"jp":"ふざけんな","sc":"开什么玩笑","file":"fuzakenna"}
 		]},{"jp":"中国語","sc":"中文","state":1,"voice":[{"jp":"ないんだ","sc":"没有啦","file":"meiyoula"}
 												,{"jp":"良かった","sc":"太好啦","file":"taihaola"}
 												,{"jp":"愛してる","sc":"我爱你","file":"woaini"}
 												,{"jp":"お疲れ様","sc":"辛苦了","file":"xinkule"}
 												,{"jp":"じゃあね","sc":"再见","file":"zaijian"}
-												,{"jp":"フォローしてねー","sc":"求关注——","file":"qiuguanzhu"}
 		]},{"jp":"色気","sc":"色气","state":1,"voice":[{"jp":"？？？","sc":"？？？","file":"ero1"}
 												,{"jp":"！？","sc":"！？","file":"ero2"}
 		]}]

@@ -1413,6 +1413,27 @@ body.is-preload #bg_mobile:before {
 
 }
 
+#wrapper .language {
+    width:auto;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+}
+#wrapper .language img {
+    width:20px;
+    height: 20px;
+    margin:auto;
+    margin-right: 5px;
+}
+#wrapper .language p{
+    color: lightyellow;
+    font-size: 18px;
+    margin: auto;
+    line-height: 20px;
+}
+
 /* Header */
 
 #header {
